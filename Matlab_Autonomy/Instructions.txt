@@ -1,0 +1,20 @@
+%
+%   Instructions for Team 2170 Robot Simulator
+%
+%
+
+init_Field.m
+draw_Field.m
+draw_Robot.m
+init_Constants.m
+
+simulate_robot_v001.m       - simulates robot with sinusoidal wheel angular velocities, does not draw field
+simulate_robot_v002.m       - simulates robot with sinusoidal wheel angular velocities, draws field with field elements
+simulate_robot_v003.m       - simulates robot with calculated wheel angular velocities all_omega_R, all_omega_L, draws field with field elements
+
+To run the non-holonomic motion planning algorithm, do (however, algorithm has bugs, doesn't work correctly)
+test_001
+simulate_v003
+
+
+test_003                    -  sets up parameters for arc & straight lines motion planning
