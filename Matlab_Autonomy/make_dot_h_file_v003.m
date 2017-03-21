@@ -1,11 +1,19 @@
 function status = make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end)
 
 %Wheel position [rotations], velocity [rotations/s],	Ts = 10 [ms];
+%Correction 03/21/2017 to rotations/minute!!!
+% Wheel position [rotations], velocity [rotations/s],	Ts = 10 [ms];
 
 N =length(all_omega_R);
 
 rotation_per_sec_R  = all_omega_R/2/pi;
 rotation_per_sec_L  = all_omega_L/2/pi;
+
+rotation_per_min_R  = rotation_per_sec_R * 60;
+rotation_per_min_L  = rotation_per_sec_L * 60;
+
+
+
 rotation_R = zeros(size(all_omega_R));
 rotation_L = zeros(size(all_omega_L));
 rotation_R(1) = 0;
@@ -46,7 +54,7 @@ for i=1:N
     if i == N
         formatSpec = '{ %13.6f , %13.6f , %13.6f }\n'  ;
     end
-    fprintf( fh, formatSpec, [rotation_R(i), rotation_per_sec_R(i), Robot.Ts*1000]);
+    fprintf( fh, formatSpec, [rotation_R(i), rotation_per_min_R(i), Robot.Ts*1000]);
 end
 
 formatSpec = '}};\n';
@@ -62,7 +70,7 @@ for i=1:N
     if i == N
         formatSpec = '{ %13.6f , %13.6f , %13.6f }\n'  ;
     end
-    fprintf( fh, formatSpec, [rotation_L(i), rotation_per_sec_L(i), Robot.Ts*1000]);
+    fprintf( fh, formatSpec, [rotation_L(i), rotation_per_min_L(i), Robot.Ts*1000]);
     
 end
 
