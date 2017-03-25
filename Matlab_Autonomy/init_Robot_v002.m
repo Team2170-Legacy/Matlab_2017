@@ -24,10 +24,12 @@ Robot.W = 24.5*in;
 %   max robot velocity will be 2.458 m/s, hopefully sufficient margin.
 %   0.80 * 0.80 = 0.64, i.e. 64% of max velocity
 
-Robot.v_max = 3.048;    % Robot max velocity (on each R / L drive wheel)
+%Robot.v_max = 3.048;    % Robot max velocity (on each R / L drive wheel)
+Robot.v_max = 1.000;    % Robot max velocity (on each R / L drive wheel)
 Robot.a_max = 3;        %Robot assumed acceleration
 
-init_Field_v002;
+%init_Field_v002;
+init_Field_v004;
 
 % % Robot starting position selection
 % 
