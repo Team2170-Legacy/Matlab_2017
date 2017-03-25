@@ -6,6 +6,8 @@
 %   03/02/2017  Updated Martin Krucinski to re-arranged field starting
 %   positions
 
+init_Constants
+
 %% Simulation sampling time
 Robot.Ts        = 0.010;        % [s]
 
@@ -39,3 +41,18 @@ init_Field_v002;
 % Robot.x0 = Robot.Start_Pos.x;
 % Robot.y0 = Robot.Start_Pos.y;
 % Robot.theta0 = Robot.Start_Pos.theta;
+
+%   Prepare figure for field drawing
+f1		= figure;				% open figure
+axis('equal')					% ensure x & y directions are scale equally on screen
+xlim([-1*ft Field.L + 1*ft])					% [m]	set figure limits for x-axis
+ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
+%xlim([-30 30])
+%ylim([-20 20])
+set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
+grid on							% draw a grid on the figure
+hold on							% ensure multiple drawing commands are overlaid on the figure
+% without erasing figure first
+
+Field.t = 0;
+

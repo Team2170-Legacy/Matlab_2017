@@ -7,6 +7,7 @@ function status = draw_Field_v002(Field);
 %   Loading Stations
 %   Boilers
 
+hold on
 status = 1;
 
 % f1 = figure;
