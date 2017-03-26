@@ -100,7 +100,7 @@ t_camera        = 0;        % Time since last camera frame grabbed
 % UNSTABLE Kp      = 0.002; %0.001666;
 % Kp      = 0.001; %0.001666;
 Kp = 0.008;
-camera_delay = 0;
+camera_delay = Ts_camera;
 
 %	Main simulation loop
 for i=2:N
@@ -122,7 +122,7 @@ for i=2:N
     
     
     
-    if (t>=t_auto_end) && (target_distance>0.05) && (t_camera>=Ts_camera),
+    if (t>=t_auto_end) && (target_distance>18*in) && (t_camera>=Ts_camera),
         t_camera            = Ts
         
         %   Calculate e_Gear_x [pixels]

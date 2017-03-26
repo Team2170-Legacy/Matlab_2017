@@ -13,6 +13,10 @@
 init_Constants;
 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 
+fps         = 25/2;                % [frames/s]    Camera frame rate
+Ts_camera   = 1/fps;            % [s]           Camera "sample" time
+camera_delay = 0;
+
 %	initial robot wheel velocities & radius
 
 Robot.wL0		= 0;		% [rad/s]	initial left wheel angular velocity
@@ -108,7 +112,7 @@ for i=2:N
     
     
     
-    if (t>=t_auto_end) && (target_distance>0.05),
+    if (t>=t_auto_end) && (target_distance>18*in),
         
         %   Calculate e_Gear_x [pixels]
         %   given Robot.x, Robot.y, Robot.theta

@@ -7,6 +7,7 @@
 %   Script to plot simulation variables from robot simulation with vision
 %   feedback for steering
 
+disp( [ ' Using camera fps = ' num2str(fps) ]);
 f1=figure;
 %set(f1, 'DefaultLineLineWidth', 3);
 he = stairs(all_t, Robot.e_Gear_x_all, 'b');
