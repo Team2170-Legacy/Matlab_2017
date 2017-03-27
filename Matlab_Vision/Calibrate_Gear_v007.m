@@ -6,9 +6,9 @@ H_margin = 5;
 S_margin = 5;
 L_margin = 10;
 
-final_H_treshold = [0 0];
-final_S_treshold = [0 0];
-final_L_treshold = [0 0];
+final_H_threshold = [0 0];
+final_S_threshold = [0 0];
+final_L_threshold = [0 0];
 final_h          = 1000;
 final_w          = 1000;
 
