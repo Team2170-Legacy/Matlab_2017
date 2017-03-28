@@ -110,7 +110,7 @@ for img=1:3
     
     H_threshold  = max( 0, min( 180, [ (H_min - H_margin) (H_max + H_margin) ]))
     S_threshold  = max( 0, min( 255, [ (S_min - S_margin) (S_max + S_margin) ]))
-    L_threshold  = max( 0, min( 255, [ (V_min - V_margin) (V_max + V_margin) ]))
+    V_threshold  = max( 0, min( 255, [ (V_min - V_margin) (V_max + V_margin) ]))
     
     target_L_h = size(target_L, 1);
     target_L_w = size(target_L, 2);    
@@ -122,14 +122,14 @@ for img=1:3
     if img == 1
         final_H_threshold = H_threshold;
         final_S_threshold = S_threshold;
-        final_V_threshold = L_threshold;
+        final_V_threshold = V_threshold;
     else
         final_H_threshold(1) = min(final_H_threshold(1), H_threshold(1))
         final_H_threshold(2) = max(final_H_threshold(2), H_threshold(2));
         final_S_threshold(1) = min(final_S_threshold(1), S_threshold(1))
         final_S_threshold(2) = max(final_S_threshold(2), S_threshold(2));
-        final_V_threshold(1) = min(final_V_threshold(1), L_threshold(1))
-        final_V_threshold(2) = max(final_V_threshold(2), L_threshold(2));
+        final_V_threshold(1) = min(final_V_threshold(1), V_threshold(1))
+        final_V_threshold(2) = max(final_V_threshold(2), V_threshold(2));
     end
 end
 %% Store calibration data in structure
