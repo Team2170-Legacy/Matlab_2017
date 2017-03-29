@@ -52,7 +52,7 @@ open(v);									% open movie file
 
 f1		= figure;				% open figure
 axis('equal')					% ensure x & y directions are scale equally on screen
-xlim([-1*ft Field.L + 1*ft])					% [m]	set figure limits for x-axis
+xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 %xlim([-30 30])
 %ylim([-20 20])
@@ -99,8 +99,14 @@ t_camera        = 0;        % Time since last camera frame grabbed
 %*** UNSTABLE for fps = 7 & 1-step delay   Kp      = 0.004; %0.001666;
 % UNSTABLE Kp      = 0.002; %0.001666;
 % Kp      = 0.001; %0.001666;
-Kp = 0.008;
+Kp = 0.004;
 camera_delay = Ts_camera;
+
+%   Peg selection
+%    Peg                 = Field.RP1;
+Peg                 = eval(end_pos);
+Target.x        = Peg.C1_x;
+Target.y        = Peg.C1_y;
 
 %	Main simulation loop
 for i=2:N
@@ -114,12 +120,6 @@ for i=2:N
     delta_vR            = 0;
     
     %   Add Vision Blending at end of move when t >= t_auto_end !!!!
-    
-    %   Peg selection
-    Peg                 = Field.RP1;
-    Target.x        = Peg.C1_x;
-    Target.y        = Peg.C1_y;
-    
     
     
     if (t>=t_auto_end) && (target_distance>18*in) && (t_camera>=Ts_camera),

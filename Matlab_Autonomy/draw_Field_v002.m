@@ -39,7 +39,8 @@ for a=1:2
     plot(AirShip.x, AirShip.y, [ AirShip.color 'x' ]);
     
     for i = 1:6
-        plot(AirShip.C_x(i), AirShip.C_y(i), [ AirShip.color 'o' ]);
+%        plot(AirShip.C_x(i), AirShip.C_y(i), [ AirShip.color 'o' ]);
+        plot(AirShip.C_x(i), AirShip.C_y(i), [ AirShip.color '.' ]);
     end
     
     plot([ AirShip.C_x AirShip.C_x(1) ], [ AirShip.C_y AirShip.C_y(1) ], AirShip.color);
@@ -131,7 +132,11 @@ set(hBS1,'LineWidth',W);
 set(hBS2,'LineWidth',W);
 set(hBS3,'LineWidth',W);
 
-    xlabel('x [m]     (Starting Positions: x - cS1, o - cS2, d - cS3)')
+%   Add labels for all starting positions
+starting_pos_texts 
+
+%xlabel('x [m]     (Starting Positions: x - cS1, o - cS2, d - cS3)')
+xlabel('x [m]')
 
 % plot([ Boiler2.C1_x Boiler2.C2_x ], [ Boiler2.C1_y Boiler2.C2_y ], Boiler2.color)
 % % plot([ 16.7750 15.5709 ], [ 0.6020 0 ], 'b') % With raw numbers instead of variables

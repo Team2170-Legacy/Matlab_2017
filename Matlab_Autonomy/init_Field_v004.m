@@ -2,7 +2,7 @@
 %   init_Field_v004.m
 %
 %   Jacob Krucinski
-%   Ryan Kalagher(messed this up)
+%   Ryan Kalagher 
 %   3/2/2017    Updated with re-arranged field positions: 
 %               Starting positions RS1, RS2, RS3, BS1, BS2, BS3
 %               Peg positions RP1, RP2, RP3, BP1, BP2, BP3
@@ -49,8 +49,9 @@ end
 Field.AirShipRed    = AirShipRed;       % Add red airship to the field
 Field.AirShipBlue   = AirShipRed;       % Create blue airship
 
-Field.AirShipBlue.C_x     =Field.L - AirShipRed.C_x;       % Set new x-coordinate for blue airship
-Field.AirShipBlue.C_y   = Field.AirShipRed.C_y;    % Move blue airship __ units to the right
+Field.AirShipBlue.C_x       = Field.L - AirShipRed.C_x;         % Set new x-coordinate for blue airship - Corners
+Field.AirShipBlue.x         = Field.L - AirShipRed.x;           % Set new x-coordinate for blue airship - Center
+Field.AirShipBlue.C_y       = Field.AirShipRed.C_y;    % Move blue airship __ units to the right
 
 %   AirShipRed.x = AirshipRed.distfromwall + AirshipRed.flattoflat / 2;
 

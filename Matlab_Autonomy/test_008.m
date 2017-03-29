@@ -37,13 +37,16 @@ tfinal      =  2.0;
 
 Ts          = Robot.Ts;
 
-%start_pos   = 'RS1';    end_pos     = 'RP1';
-%start_pos   = 'BS3';    end_pos     = 'BP3';
-%start_pos   = 'RS3';    end_pos     = 'RP3';
-%start_pos   = 'BS1';    end_pos     = 'BP1';
-%start_pos   = 'RS2';    end_pos     = 'RP2';
-start_pos   = 'BS2';    end_pos     = 'BP2';
 
+start_pos   = 'RS1';    end_pos     = 'RB';
+
+%start_pos   = 'RS1';    end_pos     = 'RP1';
+%start_pos   = 'RS2';    end_pos     = 'RP2';
+%start_pos   = 'RS3';    end_pos     = 'RP3';
+
+%start_pos   = 'BS1';    end_pos     = 'BP1';
+%start_pos   = 'BS2';    end_pos     = 'BP2';
+%start_pos   = 'BS3';    end_pos     = 'BP3';
 
 [all_omega_R, all_omega_L, all_t,t_auto_end, i_auto_end] = calc_trajectory_v8(start_pos,end_pos,vx0,vy0,omega0,vxf,vyf,omegaf, Robot, Field, Ts);
 %   Calculate trajectories
@@ -52,7 +55,8 @@ Robot.Start_Pos     = eval([ 'Field.' start_pos ]);        % *** NOTE! *** This 
 
 t_final     = all_t(end);
 
-make_dot_h_file_v002(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
+disp('Skipping .h file...')
+%make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
 
 % %%
 % f1=figure;
@@ -127,25 +131,27 @@ make_dot_h_file_v002(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_aut
 % all_omega_R     = all_v_R / R;
 % all_omega_L     = all_v_L / R;
 
-% %%
-% f3=figure;
-% title('Wheel Linear Velocities')
-% set(gcf, 'DefaultLineLineWidth', 3);
-% 
-% subplot(211)
-% plot(all_t, all_v_R)
-% ylabel('Right Wheel Linear Velocity [m/s]')
-% grid on
-% 
-% subplot(212)
-% plot(all_t, all_vx)
-% plot(all_t, all_v_L)
-% ylabel('Left Wheel Linear Velocity [m/s]')
-% xlabel('t [s]')
-% grid on
+all_v_R     = all_omega_R * R;
+all_v_L     = all_omega_L * R;
 
 %%
 f3=figure;
+title('Wheel Linear Velocities')
+set(gcf, 'DefaultLineLineWidth', 3);
+
+subplot(211)
+plot(all_t, all_v_R)
+ylabel('Right Wheel Linear Velocity [m/s]')
+grid on
+
+subplot(212)
+plot(all_t, all_v_L)
+ylabel('Left Wheel Linear Velocity [m/s]')
+xlabel('t [s]')
+grid on
+
+%%
+f4=figure;
 title('Wheel Angular Velocities')
 set(gcf, 'DefaultLineLineWidth', 3);
 

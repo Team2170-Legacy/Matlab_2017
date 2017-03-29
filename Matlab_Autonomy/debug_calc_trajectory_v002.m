@@ -30,11 +30,9 @@ title('all\_theta')
 
 f4 = figure;
 axis('equal')					% ensure x & y directions are scale equally on screen
-init_Field;
-xlim([-1*ft Field.L + 1*ft])					% [m]	set figure limits for x-axis
+init_Field_v004;
+xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
-%xlim([-30 30])
-%ylim([-20 20])
 set(f4,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
 hold on							% ensure multiple drawing commands are overlaid on the figure

@@ -6,12 +6,12 @@ global deg in ft
 %
 %   v8 uses SEPARATE scripts for each trajectory calculation, e.g.
 %
-%   cal_RS3_RB_v001.m
+%   calc_RS3_RB_v001.m
 
 %   Red Start and End trajectories
 
-if strcmp(start_pos,'RS3') && strcmp(end_pos,'RB')
-    calc_RS3_RB_v002;
+if strcmp(start_pos,'RS1') && strcmp(end_pos,'RB')
+    calc_RS1_RB_v002;
 elseif strcmp(start_pos,'RS3') && strcmp(end_pos,'RP3')
     calc_RS3_RP3_v001;
 elseif strcmp(start_pos,'RS3') && strcmp(end_pos,'RP2')

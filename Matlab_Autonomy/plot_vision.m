@@ -16,7 +16,9 @@ set(he,'LineWidth',W);
 grid on
 xlabel('t [s]')
 ylabel('error [pixels]')
-title([ 'e\_Gear\_x for   fps = ' num2str(fps) '   Kp = ' num2str(Kp) '   delay = ' num2str(camera_delay)])
+Kp_rps      = Kp * 3.133 ;
+Kp_rpm      = Kp_rps * 60;     % conversion of Kp from [ (m/s) / pixel ] to [ rpm / pixel ]
+title([ 'e\_Gear\_x for   fps = ' num2str(fps) '   Kp = ' num2str(Kp) '   Kp\_rpm = ' num2str(Kp_rpm) '   delay = ' num2str(camera_delay)])
 
 % f2=figure;
 % %set(f1, 'DefaultLineLineWidth', 3);

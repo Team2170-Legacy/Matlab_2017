@@ -11,7 +11,7 @@
 
 %   Initialize conversion constants and field elements
 init_Constants;
-init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
+init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_004
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
 Ts_camera   = 1/fps;            % [s]           Camera "sample" time
@@ -53,7 +53,7 @@ open(v);									% open movie file
 
 f1		= figure;				% open figure
 axis('equal')					% ensure x & y directions are scale equally on screen
-xlim([-1*ft Field.L + 1*ft])					% [m]	set figure limits for x-axis
+xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 %xlim([-30 30])
 %ylim([-20 20])
@@ -92,6 +92,12 @@ N_pixel         = 320;
 camera_view     = 50*deg;   %   Camera HORIZONTAL viewing angle
 target_distance  = 9;      %  Initial distance to target, large to ENABLE vision feedback control
 
+%   Peg selection
+%    Peg                 = Field.RP1;
+Peg                 = eval(end_pos);
+Target.x        = Peg.C1_x;
+Target.y        = Peg.C1_y;
+
 %	Main simulation loop
 for i=2:N
     t					= all_t(i);		% [s] get current simulation time
@@ -105,10 +111,7 @@ for i=2:N
     
     %   Add Vision Blending at end of move when t >= t_auto_end !!!!
     
-    %   Peg selection
-    Peg                 = Field.RP1;
-    Target.x        = Peg.C1_x;
-    Target.y        = Peg.C1_y;
+    
     
     
     

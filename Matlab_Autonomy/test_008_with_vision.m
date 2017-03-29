@@ -1,5 +1,5 @@
 %
-%   test_008.m
+%   test_008_with_vision.m
 %
 %   Test of robot trajectory generation
 %
@@ -38,11 +38,12 @@ tfinal      =  2.0;
 Ts          = Robot.Ts;
 
 %start_pos   = 'RS1';    end_pos     = 'RP1';
-%start_pos   = 'BS3';    end_pos     = 'BP3';
-%start_pos   = 'RS3';    end_pos     = 'RP3';
+%start_pos   = 'RS2';    end_pos     = 'RP2';
+start_pos   = 'RS3';    end_pos     = 'RP3';
+
 %start_pos   = 'BS1';    end_pos     = 'BP1';
-start_pos   = 'RS2';    end_pos     = 'RP2';
 %start_pos   = 'BS2';    end_pos     = 'BP2';
+%start_pos   = 'BS3';    end_pos     = 'BP3';
 
 
 [all_omega_R, all_omega_L, all_t,t_auto_end, i_auto_end] = calc_trajectory_v8(start_pos,end_pos,vx0,vy0,omega0,vxf,vyf,omegaf, Robot, Field, Ts);
@@ -54,7 +55,7 @@ Robot.Start_Pos.x   = Robot.Start_Pos.x - 8*in;            % Move robot 2 in to 
 t_final     = all_t(end);
 
 disp('Skipping .h file...')
-%make_dot_h_file_v002(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
+%make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
 
 % %%
 % f1=figure;

@@ -38,12 +38,12 @@ C4_y	= y - W/2*cos(th)  - L/2*sin(th);	%
 %	C3 - AFT Left using BLUE CROSS
 %	C4 - FWD Left using RED CROSS
 
-plot(C1_x, C1_y, 'bo')
-plot(C2_x, C2_y, 'ro')
-plot(C3_x, C3_y, 'bx')
-plot(C4_x, C4_y, 'rx')
+%plot(C1_x, C1_y, 'bo')
+%plot(C2_x, C2_y, 'ro')
+%plot(C3_x, C3_y, 'bx')
+%plot(C4_x, C4_y, 'rx')
 
-plot([C1_x C2_x], [C1_y C2_y], 'b')
+plot([C1_x C2_x], [C1_y C2_y], 'b:')
 plot([C2_x C4_x], [C2_y C4_y], 'b')
 plot([C4_x C3_x], [C4_y C3_y], 'b')
 plot([C3_x C1_x], [C3_y C1_y], 'b')

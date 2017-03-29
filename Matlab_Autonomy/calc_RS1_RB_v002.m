@@ -1,6 +1,6 @@
 
 %
-%   calc_RS3_RB_v001.m
+%   calc_RS1_RB_v002.m
 %
 %   03/02/2017
 
@@ -33,7 +33,7 @@
 
 % Robot starting position selection
 
-Robot.Start_Pos     = Robot.RS3;    % CHANGE SPECIFIED STARTING POSITION HERE
+Robot.Start_Pos     = Field.RS1;    % CHANGE SPECIFIED STARTING POSITION HERE
                                     % OR
                                     % in the selection of Autonomous
                                     % Trajectory, calc_trajectory_v8.m and
@@ -58,7 +58,7 @@ rel_theta1  = -90*deg;      % [rad] robot turn angle in segment 1
 theta1_f	= theta1_0 + rel_theta1;
 
 arcR        = 1.5;          % [m]   Arc radius
-margin      = 0.10%80;         % []    Ratio of max velocity we use in trajectory planning to max velocity
+margin      = 0.80;         % []    Ratio of max velocity we use in trajectory planning to max velocity
 v_max       = margin * Robot.v_max;
 a_max       = Robot.a_max;
 
@@ -169,8 +169,11 @@ all_y_t3    = C3_y + arcR * sin(sweep_angle_t3);
 
 %   Set Target destination as temporary Boiler parameters
 %   *** Need to provide Field.Boiler to this function ****
-Boiler.M_x      = 0.3774;
-Boiler.M_y      = 0.3774;
+% DONE! See below ****  Boiler.M_x      = 0.3774;
+% DONE! See below ****  Boiler.M_y      = 0.3774;
+
+Boiler = Field.BoilerRed;
+
 
 rel_theta4      = 0;
 theta4_0		= theta3_f;
@@ -222,3 +225,7 @@ all_v_R         = all_v_Fwd + 1/2 * all_omega * Robot.d;
 all_v_L         = all_v_Fwd - 1/2 * all_omega * Robot.d;
 all_omega_R     = all_v_R / Robot.R;
 all_omega_L     = all_v_L / Robot.R;
+
+t_auto_end      = all_t(end);  
+i_auto_end      = length(all_t);
+

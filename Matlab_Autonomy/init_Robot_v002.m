@@ -47,7 +47,7 @@ init_Field_v004;
 %   Prepare figure for field drawing
 f1		= figure;				% open figure
 axis('equal')					% ensure x & y directions are scale equally on screen
-xlim([-1*ft Field.L + 1*ft])					% [m]	set figure limits for x-axis
+xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 %xlim([-30 30])
 %ylim([-20 20])
