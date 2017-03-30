@@ -26,7 +26,14 @@ elseif strcmp(start_pos,'RS1') && strcmp(end_pos,'RP3')
 elseif strcmp(start_pos,'RS1') && strcmp(end_pos,'RP2')
 elseif strcmp(start_pos,'RS1') && strcmp(end_pos,'RP1')
     calc_RS1_RP1_v001;
+elseif strcmp(start_pos,'RP2') && strcmp(end_pos,'RB')
+    calc_RP2_RB_v001;
+elseif strcmp(start_pos,'RP1') && strcmp(end_pos,'RB')
+    calc_RP1_RB_v001;
+elseif strcmp(start_pos,'RP3') && strcmp(end_pos,'RB')
+    calc_RP3_RB_v002;
     
+       
     
 %   Blue Start and End trajectories
     

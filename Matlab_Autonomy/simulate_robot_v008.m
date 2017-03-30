@@ -13,6 +13,41 @@
 init_Constants;
 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 
+%   Special initial position handling for Pegs RP1-RP3
+if strcmp(start_pos, 'RP2'),
+    Robot.x0        = Robot.Start_Pos.C1_x - Robot.L/2;
+    Robot.y0        = Robot.Start_Pos.C1_y;
+    Robot.theta0    = Robot.Start_Pos.th;
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+end
+
+if strcmp(start_pos, 'RP1'),
+    
+    Robot.theta0    = Robot.Start_Pos.th;
+    Robot.x0        = Robot.Start_Pos.C1_x + Robot.L/2*cos(Robot.theta0);
+    Robot.y0        = Robot.Start_Pos.C1_y + Robot.L/2*sin(Robot.theta0);
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+    
+end
+
+if strcmp(start_pos, 'RP3'),
+    
+    Robot.theta0    = Robot.Start_Pos.th;
+    Robot.x0        = Robot.Start_Pos.C1_x + Robot.L/2*cos(Robot.theta0);
+    Robot.y0        = Robot.Start_Pos.C1_y + Robot.L/2*sin(Robot.theta0);
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+    
+end
+
 %	initial robot wheel velocities & radius
 
 Robot.wL0		= 0;		% [rad/s]	initial left wheel angular velocity
@@ -54,11 +89,11 @@ ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
 hold on							% ensure multiple drawing commands are overlaid on the figure
-                                % without erasing figure first
+% without erasing figure first
 
-Field.t = 0;                                
+Field.t = 0;
 draw_Field_v002(Field)
-                                
+
 
 %	Initial conditions
 
@@ -81,41 +116,41 @@ Robot.vFwd_all(1)	= Robot.vFwd;
 
 %	Main simulation loop
 for i=2:N
-	t					= all_t(i);		% [s] get current simulation time
-	Robot.t				= t;
+    t					= all_t(i);		% [s] get current simulation time
+    Robot.t				= t;
     Field.t             = t;
-	
-	Robot.wL			= all_omega_L(i);			% [rad/s]	Trajectory planned wheel velocities
-	Robot.wR			= all_omega_R(i);
-	
-	Robot.vFwd			= 1/2 * Robot.R * (Robot.wL + Robot.wR);		% [m/s] Robot Forward velocity, average of the two wheels
-	Robot.omega			= (Robot.wR - Robot.wL) * Robot.R /  Robot.d;	% Robot Angular velocity
-	
-	Robot.vx			= Robot.vFwd * cos( Robot.theta );		% [m/s]		Robot center x-velocity
-	Robot.vy			= Robot.vFwd * sin( Robot.theta );		% [m/s]		Robot center y-velocity
-	
-	Robot.x				= Robot.x + Robot.vx * Ts;			% [m]	Integrate robot x-position
-	Robot.y				= Robot.y + Robot.vy * Ts;			% [m]	Integrate robot y-position
-	Robot.theta			= Robot.theta + Robot.omega * Ts;	% [rad]	Integrate robot angle
-	
-	draw_Robot(Robot);						% Call function to draw Robot in figure
+    
+    Robot.wL			= all_omega_L(i);			% [rad/s]	Trajectory planned wheel velocities
+    Robot.wR			= all_omega_R(i);
+    
+    Robot.vFwd			= 1/2 * Robot.R * (Robot.wL + Robot.wR);		% [m/s] Robot Forward velocity, average of the two wheels
+    Robot.omega			= (Robot.wR - Robot.wL) * Robot.R /  Robot.d;	% Robot Angular velocity
+    
+    Robot.vx			= Robot.vFwd * cos( Robot.theta );		% [m/s]		Robot center x-velocity
+    Robot.vy			= Robot.vFwd * sin( Robot.theta );		% [m/s]		Robot center y-velocity
+    
+    Robot.x				= Robot.x + Robot.vx * Ts;			% [m]	Integrate robot x-position
+    Robot.y				= Robot.y + Robot.vy * Ts;			% [m]	Integrate robot y-position
+    Robot.theta			= Robot.theta + Robot.omega * Ts;	% [rad]	Integrate robot angle
+    
+    draw_Robot(Robot);						% Call function to draw Robot in figure
     draw_Field_v002(Field);
-	Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
-	Robot_Image			= Robot_Figure.cdata;
-%	pause
-
-	if i < N
+    Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
+    Robot_Image			= Robot_Figure.cdata;
+    %	pause
+    
+    if i < N
         cla         % Erase figure in preparation for next simulation step
     end
-	
-	Robot.x_all(i)		= Robot.x;		% Store all robot variables in storage arrays
-	Robot.y_all(i)		= Robot.y;
-	Robot.theta_all(i)	= Robot.theta;
-	
-	Robot.wL_all(i)		= Robot.wL;
-	Robot.wR_all(i)		= Robot.wR;
-	
-	writeVideo(v, Robot_Image);			% Write screenshot image to video file
+    
+    Robot.x_all(i)		= Robot.x;		% Store all robot variables in storage arrays
+    Robot.y_all(i)		= Robot.y;
+    Robot.theta_all(i)	= Robot.theta;
+    
+    Robot.wL_all(i)		= Robot.wL;
+    Robot.wR_all(i)		= Robot.wR;
+    
+    writeVideo(v, Robot_Image);			% Write screenshot image to video file
 end
 
 close(v)			% Close robot simulation video file
