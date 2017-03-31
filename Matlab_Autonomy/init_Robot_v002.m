@@ -29,7 +29,7 @@ Robot.v_max = 2.000;    % Robot max velocity (on each R / L drive wheel)
 Robot.a_max = 3;        %Robot assumed acceleration
 
 %init_Field_v002;
-init_Field_v004;
+init_Field_v005;
 
 % % Robot starting position selection
 % 
