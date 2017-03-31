@@ -40,6 +40,7 @@ Ts          = Robot.Ts;
 
 start_pos   = 'BP1';    end_pos     = 'BB';
 
+%start_pos   = 'RP3';    end_pos     = 'RB';
 %start_pos   = 'RP2';    end_pos     = 'RB';
 %start_pos   = 'RS1';    end_pos     = 'RB';
 

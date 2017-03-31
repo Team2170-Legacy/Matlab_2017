@@ -146,6 +146,11 @@ Field.BP1.C2_x = x_reflect * 2 - Field.RP1.C2_x;
 Field.BP2.C2_x = x_reflect * 2 - Field.RP2.C2_x;
 Field.BP3.C2_x = x_reflect * 2 - Field.RP3.C2_x;
 
+%   Mirror peg angles: 180 - theta
+Field.BP1.th = 180*deg - Field.BP1.th;
+Field.BP2.th = 180*deg - Field.BP2.th;
+Field.BP3.th = 180*deg - Field.BP3.th;
+
 %   Re-arrange pegs: Red pegs were correct, Blue pegs need to be re-ordered
 BPTemp     = Field.BP1;
 Field.BP1  = Field.BP3;

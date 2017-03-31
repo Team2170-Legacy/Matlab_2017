@@ -48,6 +48,18 @@ if strcmp(start_pos, 'RP3'),
     
 end
 
+if strcmp(start_pos, 'BP1'),
+    
+    Robot.theta0    = Robot.Start_Pos.th;
+    Robot.x0        = Robot.Start_Pos.C1_x + Robot.L/2*cos(Robot.theta0);
+    Robot.y0        = Robot.Start_Pos.C1_y + Robot.L/2*sin(Robot.theta0);
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+    
+end
+
 %	initial robot wheel velocities & radius
 
 Robot.wL0		= 0;		% [rad/s]	initial left wheel angular velocity

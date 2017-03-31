@@ -52,7 +52,7 @@ elseif strcmp(start_pos,'BS1') && strcmp(end_pos,'BP2')
 elseif strcmp(start_pos,'BS1') && strcmp(end_pos,'BP1')
         calc_BS1_BP1_v001;
 elseif strcmp(start_pos,'BP1') && strcmp(end_pos,'BB')
-        calc_BP1_BB_v002;
+        calc_BP1_BB_v003;
 end
 
 disp('Done')
