@@ -88,6 +88,9 @@ Field.BoilerBlue.C2_x = x_reflect * 2 - BoilerRed.C2_x;
 Field.BoilerBlue.C3_x = x_reflect * 2 - BoilerRed.C3_x;
 Field.BoilerBlue.C4_x = x_reflect * 2 - BoilerRed.C4_x;
 
+%*** Added 03/30/2017
+Field.BoilerBlue.M_x       = x_reflect * 2 - BoilerRed.M_x;
+
 %% Base Line Initialization
 
 % Red Alliance's baseline

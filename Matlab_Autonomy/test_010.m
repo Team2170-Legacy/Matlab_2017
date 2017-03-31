@@ -37,8 +37,11 @@ tfinal      =  2.0;
 
 Ts          = Robot.Ts;
 
+start_pos   = 'BP2';    end_pos     = 'BB';
 
-start_pos   = 'BP1';    end_pos     = 'BB';
+%start_pos   = 'BB';    end_pos     = 'F';
+%start_pos   = 'RB';    end_pos     = 'F';
+%start_pos   = 'BP1';    end_pos     = 'BB';
 
 %start_pos   = 'RP3';    end_pos     = 'RB';
 %start_pos   = 'RP2';    end_pos     = 'RB';
@@ -55,7 +58,13 @@ start_pos   = 'BP1';    end_pos     = 'BB';
 [all_omega_R, all_omega_L, all_t,t_auto_end, i_auto_end] = calc_trajectory_v8(start_pos,end_pos,vx0,vy0,omega0,vxf,vyf,omegaf, Robot, Field, Ts);
 %   Calculate trajectories
 
-Robot.Start_Pos     = eval([ 'Field.' start_pos ]);        % *** NOTE! *** This has to match the starting position for calc_trajectory_v8 ***
+if strcmp(start_pos,'RB')
+    Robot.StartPos  = Field.BoilerRed;
+elseif strcmp(start_pos,'BB')
+    Robot.StartPos  = Field.BoilerBlue;
+else
+    Robot.Start_Pos     = eval([ 'Field.' start_pos ]);        % *** NOTE! *** This has to match the starting position for calc_trajectory_v8 ***
+end
 
 t_final     = all_t(end);
 
@@ -66,7 +75,7 @@ disp('Skipping .h file...')
 % f1=figure;
 % title('Robot Trajectory')
 % set(gcf, 'DefaultLineLineWidth', 3);
-% 
+%
 % subplot(311)
 % plot(all_t, all_x)
 % ylabel('x  [m]')
@@ -74,7 +83,7 @@ disp('Skipping .h file...')
 % hold on
 % plot(0, x0, 'bo')
 % plot(tfinal, xf, 'bo')
-% 
+%
 % subplot(312)
 % set(gca, 'DefaultLineLineWidth', 3);
 % plot(all_t, all_y)
@@ -83,7 +92,7 @@ disp('Skipping .h file...')
 % hold on
 % plot(0, y0, 'bo')
 % plot(tfinal, yf, 'bo')
-% 
+%
 % subplot(313)
 % plot(all_t, all_theta)
 % ylabel('theta [rad]')
@@ -92,12 +101,12 @@ disp('Skipping .h file...')
 % hold on
 % plot(0, theta0, 'bo')
 % plot(tfinal, thetaf, 'bo')
-% 
+%
 % %%
 % f2=figure;
 % title('Robot Velocities')
 % set(gcf, 'DefaultLineLineWidth', 3);
-% 
+%
 % subplot(311)
 % plot(all_t, all_vx)
 % ylabel('vx  [m/s]')
@@ -105,7 +114,7 @@ disp('Skipping .h file...')
 % hold on
 % plot(0, vx0, 'bo')
 % plot(tfinal, vxf, 'bo')
-% 
+%
 % subplot(312)
 % set(gca, 'DefaultLineLineWidth', 3);
 % plot(all_t, all_vy)
@@ -114,7 +123,7 @@ disp('Skipping .h file...')
 % hold on
 % plot(0, vy0, 'bo')
 % plot(tfinal, vyf, 'bo')
-% 
+%
 % subplot(313)
 % plot(all_t, all_omega)
 % ylabel('omega [rad/s]')
@@ -123,13 +132,13 @@ disp('Skipping .h file...')
 % plot(0, omega0, 'bo')
 % plot(tfinal, omegaf, 'bo')
 % xlabel('t [s]')
-% 
-% 
+%
+%
 % %   Now, ideally we need polynomials for vR & vL
 % %   For now, just calculate the velocity points
-% 
+%
 % all_v_Fwd       = sqrt(all_vx.^2+all_vy.^2);
-% 
+%
 % all_v_R         = all_v_Fwd + 1/2 * all_omega * d;
 % all_v_L         = all_v_Fwd - 1/2 * all_omega * d;
 % all_omega_R     = all_v_R / R;

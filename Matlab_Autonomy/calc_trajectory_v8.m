@@ -32,6 +32,8 @@ elseif strcmp(start_pos,'RP1') && strcmp(end_pos,'RB')
     calc_RP1_RB_v001;
 elseif strcmp(start_pos,'RP3') && strcmp(end_pos,'RB')
     calc_RP3_RB_v002;
+elseif strcmp(start_pos,'RB') && strcmp(end_pos,'F')
+    calc_RB_F_v001;
     
        
     
@@ -53,6 +55,12 @@ elseif strcmp(start_pos,'BS1') && strcmp(end_pos,'BP1')
         calc_BS1_BP1_v001;
 elseif strcmp(start_pos,'BP1') && strcmp(end_pos,'BB')
         calc_BP1_BB_v003;
+elseif strcmp(start_pos,'BP2') && strcmp(end_pos,'BB')
+        calc_BP2_BB_v001;
+elseif strcmp(start_pos,'BP3') && strcmp(end_pos,'BB')
+        calc_BP3_BB_v001;
+elseif strcmp(start_pos,'BB') && strcmp(end_pos,'F')
+    calc_BB_F_v001;
 end
 
 disp('Done')
