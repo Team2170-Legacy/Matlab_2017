@@ -1,5 +1,5 @@
 %
-%   generate_all_trajectories_v003.m
+%   generate_all_trajectories_v004.m
 %
 %   Generates all autonomous mode trajectories and writes all .h files
 %
@@ -16,6 +16,10 @@ init_Constants;
 
 init_Robot_v002;
 
+%% Initialize table of move time (Auto_Table)
+Auto_Table{1}   = {'Start', 'End', 'Time [s]'};
+
+%%
 R       = Robot.R;
 d       = Robot.d;
 L       = Robot.L;
@@ -73,6 +77,8 @@ all_end_pos     = {
     'F';
     };
 
+auto_row = 2;
+
 for traj = 1:length(all_start_pos),
     
     start_pos   = all_start_pos{traj};
@@ -94,23 +100,34 @@ for traj = 1:length(all_start_pos),
     
     t_final     = all_t(end);
     
-    make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
+    % make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
+    
+    Auto_Table{auto_row} = { start_pos , end_pos , t_final };
+    auto_row = auto_row + 1;
+    
+    
     
     %%
-    f3=figure;
-    title('Wheel Angular Velocities')
-    set(gcf, 'DefaultLineLineWidth', 3);
     
-    subplot(211)
-    plot(all_t, all_omega_R,'r')
-    ylabel('Right Wheel Velocity [rad/s]')
-    grid on
-    
-    subplot(212)
-    plot(all_t, all_omega_L,'b')
-    ylabel('Left Wheel Velocity [rad/s]')
-    xlabel('t [s]')
-    grid on
+    if 0,
+        f3=figure;
+        title('Wheel Angular Velocities')
+        set(gcf, 'DefaultLineLineWidth', 3);
+        
+        subplot(211)
+        plot(all_t, all_omega_R,'r')
+        ylabel('Right Wheel Velocity [rad/s]')
+        grid on
+        
+        subplot(212)
+        plot(all_t, all_omega_L,'b')
+        ylabel('Left Wheel Velocity [rad/s]')
+        xlabel('t [s]')
+        grid on
+    end
     
 end
+
+Auto_Table = Auto_Table';
+cell2table(Auto_Table)
 
