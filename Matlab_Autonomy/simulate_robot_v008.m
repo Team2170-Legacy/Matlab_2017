@@ -14,15 +14,6 @@ init_Constants;
 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 
 %   Special initial position handling for Pegs RP1-RP3
-if strcmp(start_pos, 'RP2'),
-    Robot.x0        = Robot.Start_Pos.C1_x - Robot.L/2;
-    Robot.y0        = Robot.Start_Pos.C1_y;
-    Robot.theta0    = Robot.Start_Pos.th;
-    
-    Robot.Start_Pos.x = Robot.x0;
-    Robot.Start_Pos.y = Robot.y0;
-    Robot.Start_Pos.theta = Robot.theta0;
-end
 
 if strcmp(start_pos, 'RP1'),
     
@@ -35,6 +26,18 @@ if strcmp(start_pos, 'RP1'),
     Robot.Start_Pos.theta = Robot.theta0;
     
 end
+
+if strcmp(start_pos, 'RP2'),
+    Robot.x0        = Robot.Start_Pos.C1_x - Robot.L/2;
+    Robot.y0        = Robot.Start_Pos.C1_y;
+    Robot.theta0    = Robot.Start_Pos.th;
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+end
+
+
 
 if strcmp(start_pos, 'RP3'),
     
@@ -49,6 +52,18 @@ if strcmp(start_pos, 'RP3'),
 end
 
 if strcmp(start_pos, 'BP1'),
+    
+    Robot.theta0    = Robot.Start_Pos.th;
+    Robot.x0        = Robot.Start_Pos.C1_x + Robot.L/2*cos(Robot.theta0);
+    Robot.y0        = Robot.Start_Pos.C1_y + Robot.L/2*sin(Robot.theta0);
+    
+    Robot.Start_Pos.x = Robot.x0;
+    Robot.Start_Pos.y = Robot.y0;
+    Robot.Start_Pos.theta = Robot.theta0;
+    
+end
+
+if strcmp(start_pos, 'BP2'),
     
     Robot.theta0    = Robot.Start_Pos.th;
     Robot.x0        = Robot.Start_Pos.C1_x + Robot.L/2*cos(Robot.theta0);

@@ -11,6 +11,8 @@
 
 init_Constants;
 
+make_movies = 0;    % 1 - simulate robot & write movie files, 0 - only write .h files & generate move tables
+
 %*** NOT NEEDED, init_Robot_v002 now calls init_Field_v002
 %**** init_Field_v002;
 
@@ -124,6 +126,17 @@ for traj = 1:length(all_start_pos),
         ylabel('Left Wheel Velocity [rad/s]')
         xlabel('t [s]')
         grid on
+    end
+    
+    if make_movies,
+        
+        simulate_robot_v008;
+        
+        movie_file_name = [ 'Robot_Movie_' start_pos '_' end_pos '.mp4' ];
+        copy_command    = ['!copy Robot_Movie.mp4 ' 'Movies\' movie_file_name ];
+        eval(copy_command);
+        close all;
+        init_Robot_v002;
     end
     
 end
