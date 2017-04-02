@@ -1,0 +1,75 @@
+generate_all_trajectories_v004
+Generating trajectory from RS1 to RP1
+Done
+Trajectories_dot_h\RS1_to_RP1.h        written successfully...
+Generating trajectory from RS2 to RP2
+Done
+Trajectories_dot_h\RS2_to_RP2.h        written successfully...
+Generating trajectory from RS3 to RP3
+Done
+Trajectories_dot_h\RS3_to_RP3.h        written successfully...
+Generating trajectory from BS1 to BP1
+Done
+Trajectories_dot_h\BS1_to_BP1.h        written successfully...
+Generating trajectory from BS2 to BP2
+Done
+Trajectories_dot_h\BS2_to_BP2.h        written successfully...
+Generating trajectory from BS3 to BP3
+Done
+Trajectories_dot_h\BS3_to_BP3.h        written successfully...
+Generating trajectory from RP1 to RB
+Done
+Trajectories_dot_h\RP1_to_RB.h        written successfully...
+Generating trajectory from RP2 to RB
+Done
+Trajectories_dot_h\RP2_to_RB.h        written successfully...
+Generating trajectory from RP3 to RB
+Done
+Trajectories_dot_h\RP3_to_RB.h        written successfully...
+Generating trajectory from BP1 to BB
+Done
+Trajectories_dot_h\BP1_to_BB.h        written successfully...
+Generating trajectory from BP2 to BB
+Done
+Trajectories_dot_h\BP2_to_BB.h        written successfully...
+Generating trajectory from BP3 to BB
+Done
+Trajectories_dot_h\BP3_to_BB.h        written successfully...
+Generating trajectory from RB to F
+Done
+Trajectories_dot_h\RB_to_F.h        written successfully...
+Generating trajectory from BB to F
+Done
+Trajectories_dot_h\BB_to_F.h        written successfully...
+
+ans = 
+
+    <strong>          Auto_Table          </strong>
+    <strong>______________________________</strong>
+
+    'Start'    'End'    'Time [s]'
+    'RS1'      'RP1'    [  3.3400]
+    'RS2'      'RP2'    [  2.3500]
+    'RS3'      'RP3'    [  3.6600]
+    'BS1'      'BP1'    [  3.6600]
+    'BS2'      'BP2'    [  2.3500]
+    'BS3'      'BP3'    [  3.3400]
+    'RP1'      'RB'     [  4.8200]
+    'RP2'      'RB'     [  3.2300]
+    'RP3'      'RB'     [  2.9100]
+    'BP1'      'BB'     [  2.9100]
+    'BP2'      'BB'     [  3.2300]
+    'BP3'      'BB'     [  4.8200]
+    'RB'       'F'      [  3.5500]
+    'BB'       'F'      [  3.5500]
+
+generate_move_combinations_v001
+
+ans = 
+
+    <strong>final_result1</strong><strong>    final_result2</strong><strong>    final_result3</strong><strong>    final_result4</strong><strong>    final_result5</strong>
+    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>
+
+    'RS3'            'RP3'            'RB'             'F'              13.12        
+
+diary off

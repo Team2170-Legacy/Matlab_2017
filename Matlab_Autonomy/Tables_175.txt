@@ -1,0 +1,82 @@
+clear all ; clc ; close all
+generate_move_combinations_v001
+{Undefined function or variable 'Auto_Table'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('generate_move_combinations_v001', 'C:\Users\FRC\MATLAB\Projects\Matlab_2017\Matlab_Autonomy\generate_move_combinations_v001.m', 13)" style="font-weight:bold">generate_move_combinations_v001</a> (<a href="matlab: opentoline('C:\Users\FRC\MATLAB\Projects\Matlab_2017\Matlab_Autonomy\generate_move_combinations_v001.m',13,0)">line 13</a>)
+temp1 = size(Auto_Table);
+} 
+generate_all_trajectories_v004
+Generating trajectory from RS1 to RP1
+Done
+Trajectories_dot_h\RS1_to_RP1.h        written successfully...
+Generating trajectory from RS2 to RP2
+Done
+Trajectories_dot_h\RS2_to_RP2.h        written successfully...
+Generating trajectory from RS3 to RP3
+Done
+Trajectories_dot_h\RS3_to_RP3.h        written successfully...
+Generating trajectory from BS1 to BP1
+Done
+Trajectories_dot_h\BS1_to_BP1.h        written successfully...
+Generating trajectory from BS2 to BP2
+Done
+Trajectories_dot_h\BS2_to_BP2.h        written successfully...
+Generating trajectory from BS3 to BP3
+Done
+Trajectories_dot_h\BS3_to_BP3.h        written successfully...
+Generating trajectory from RP1 to RB
+Done
+Trajectories_dot_h\RP1_to_RB.h        written successfully...
+Generating trajectory from RP2 to RB
+Done
+Trajectories_dot_h\RP2_to_RB.h        written successfully...
+Generating trajectory from RP3 to RB
+Done
+Trajectories_dot_h\RP3_to_RB.h        written successfully...
+Generating trajectory from BP1 to BB
+Done
+Trajectories_dot_h\BP1_to_BB.h        written successfully...
+Generating trajectory from BP2 to BB
+Done
+Trajectories_dot_h\BP2_to_BB.h        written successfully...
+Generating trajectory from BP3 to BB
+Done
+Trajectories_dot_h\BP3_to_BB.h        written successfully...
+Generating trajectory from RB to F
+Done
+Trajectories_dot_h\RB_to_F.h        written successfully...
+Generating trajectory from BB to F
+Done
+Trajectories_dot_h\BB_to_F.h        written successfully...
+
+ans = 
+
+    <strong>          Auto_Table          </strong>
+    <strong>______________________________</strong>
+
+    'Start'    'End'    'Time [s]'
+    'RS1'      'RP1'    [  3.7500]
+    'RS2'      'RP2'    [  2.6100]
+    'RS3'      'RP3'    [  4.1200]
+    'BS1'      'BP1'    [  4.1200]
+    'BS2'      'BP2'    [  2.6100]
+    'BS3'      'BP3'    [  3.7500]
+    'RP1'      'RB'     [  5.4300]
+    'RP2'      'RB'     [  3.6100]
+    'RP3'      'RB'     [  3.2600]
+    'BP1'      'BB'     [  3.2600]
+    'BP2'      'BB'     [  3.6100]
+    'BP3'      'BB'     [  5.4300]
+    'RB'       'F'      [  3.9900]
+    'BB'       'F'      [  3.9900]
+
+generate_move_combinations_v001
+
+ans = 
+
+    <strong>final_result1</strong><strong>    final_result2</strong><strong>    final_result3</strong><strong>    final_result4</strong><strong>    final_result5</strong>
+    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>    <strong>_____________</strong>
+
+    'RS3'            'RP3'            'RB'             'F'              14.37        
+
+diary off

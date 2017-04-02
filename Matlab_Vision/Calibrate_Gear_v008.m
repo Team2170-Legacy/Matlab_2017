@@ -139,8 +139,8 @@ Calib.Smin      = final_S_threshold(1);
 Calib.Smax      = final_S_threshold(2);
 Calib.Vmin      = final_V_threshold(1);
 Calib.Vmax      = final_V_threshold(2);
-Calib.MinHeight = final_h;
-Calib.MinWidth  = final_w;
+Calib.MinHeight = 10; %final_h;
+Calib.MinWidth  = 5; %final_w;
 Calib.MinRatio  = 0.1;
 Calib.MaxRatio  = 0.5;
 

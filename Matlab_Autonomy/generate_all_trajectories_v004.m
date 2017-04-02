@@ -100,7 +100,7 @@ for traj = 1:length(all_start_pos),
     
     t_final     = all_t(end);
     
-    % make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
+    make_dot_h_file_v003(start_pos,end_pos,all_omega_R,all_omega_L,all_t,Robot,t_auto_end, i_auto_end);
     
     Auto_Table{auto_row} = { start_pos , end_pos , t_final };
     auto_row = auto_row + 1;

@@ -56,7 +56,8 @@ P0_x        = x0;
 P0_y        = y0;
 P0          = [P0_x P0_y];
 theta1_0    = theta0;
-rel_theta1  = -17*deg;      % [rad] robot turn angle in segment 1
+%rel_theta1  = -17*deg;      % [rad] robot turn angle in segment 1
+rel_theta1  = -20.5*deg;      % [rad] robot turn angle in segment 1
 theta1_f	= theta1_0 + rel_theta1;
 
 arcR        = 1.5;          % [m]   Arc radius
@@ -133,8 +134,10 @@ theta4_0		= theta2_f;
 theta4_f		= theta4_0 + rel_theta4;
 
 theta4          = theta4_f;
-P4_x            = Boiler.M_x - Robot.L/2*cos(theta4);
-P4_y            = Boiler.M_y - Robot.L/2*sin(theta4);
+% P4_x            = Boiler.M_x - Robot.L/2*cos(theta4);
+% P4_y            = Boiler.M_y - Robot.L/2*sin(theta4);
+P4_x            = Boiler.M_x - Robot.L/2*cos(theta4) - 0.15;
+P4_y            = Boiler.M_y - Robot.L/2*sin(theta4) + 0.15;
 P4              = [ P4_x P4_y ];
 
 L_4         = Robot.L;    % length of Segment 4
