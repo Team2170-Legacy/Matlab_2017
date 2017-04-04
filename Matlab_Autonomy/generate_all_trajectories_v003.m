@@ -3,7 +3,7 @@
 %
 %   Generates all autonomous mode trajectories and writes all .h files
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 %   2017-03-19      v001
 %
 %   Jacob Krucinski

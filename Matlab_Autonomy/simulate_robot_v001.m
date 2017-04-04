@@ -1,7 +1,7 @@
 %
 %	simulate_robot_v001.m
 %
-%	Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 %	mkrucinski@gmail.com
 %
 %	FIRST Robotics Team 2170 Titanium Tomahawks

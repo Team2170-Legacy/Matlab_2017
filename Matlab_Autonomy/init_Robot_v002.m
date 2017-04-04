@@ -1,7 +1,7 @@
 %
 %   init_Robot_v002.m
 %
-%   Jacob Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 %
 %   03/02/2017  Updated Martin Krucinski to re-arranged field starting
 %   positions
@@ -17,7 +17,7 @@ Robot.R = 2*in;         % [m]		Robot wheel radius
 Robot.L = 22*in;		% Robot length (along the driving direction)
 Robot.W = 24.5*in;
 %
-%   Update Martin Krucinski 03/03/2017
+%   Updated Martin Krucinski 03/03/2017
 %   Per info on our robot, max speed is 12.6 fps, which is 3.84 m/s
 %   We use v_max = 3.048 m/s below, 12.6 fps * 80% is 3.07 m/s.
 %   With the additional margin = 0.80 in the calc_*_* scripts

@@ -1,6 +1,6 @@
 %
-% Calibrate_Gear.m
-% Written by Jacob & Martin Krucinski on 2/15/17
+%   Calibrate_Gear.m
+%   Jacob Krucinski (jacob1576@gmail.com)
 
 img_001 = imread('Image_001.png');
 imshow(img_001);

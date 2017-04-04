@@ -2,7 +2,7 @@
 %   debug_calc_trajectory.m
 %
 %   Script to aid debugging of trajectory generation
-%   Martin Krucinski 01/28/2017
+%   Jacob Krucinski (jacob1576@gmail.com)
 
 f1=figure;
 set(f1, 'DefaultLineLineWidth', 3);

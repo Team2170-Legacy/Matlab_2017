@@ -1,7 +1,7 @@
 %
 %   plot_vision.m
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 %   2017-03-18
 %
 %   Script to plot simulation variables from robot simulation with vision

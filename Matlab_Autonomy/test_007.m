@@ -3,7 +3,7 @@
 %
 %   Test of robot trajectory generation
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 
 init_Constants;
 init_Field;

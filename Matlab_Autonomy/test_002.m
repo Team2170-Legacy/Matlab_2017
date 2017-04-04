@@ -3,7 +3,7 @@
 %
 %   Test of robot trajectory generation
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 %
 %   v _002 uses DIFFERENT calculation for vy  & y ...
 

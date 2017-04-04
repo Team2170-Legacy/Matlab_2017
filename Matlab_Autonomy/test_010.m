@@ -3,7 +3,8 @@
 %
 %   Test of robot trajectory generation
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
+%   Tim Foss
 
 init_Constants;
 

@@ -3,7 +3,7 @@
 %
 %   Generate all .h files for all trajectories
 %
-%   Martin Krucinski
+%   Jacob Krucinski (jacob1576@gmail.com)
 
 init_Constants;
 

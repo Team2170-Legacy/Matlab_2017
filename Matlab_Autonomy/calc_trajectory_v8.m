@@ -1,6 +1,8 @@
 function [all_omega_R, all_omega_L, all_t,t_auto_end, i_auto_end] = calc_trajectory_v8(start_pos,end_pos,vx0,vy0,omega0,vxf,vyf,omegaf, Robot, Field, Ts)
 global deg in ft
 %
+%   Jacob Krucinski (jacob1576@gmail.com)
+%
 %   Function to calculate the autonomous robot trajectories
 %   for FRC Team 2170 robot
 %
